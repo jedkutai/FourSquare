@@ -7,26 +7,34 @@
 
 import SwiftUI
 import SwiftData
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+    
+}
+
+extension UINavigationController {
+    // Remove back button text
+    open override func viewWillLayoutSubviews() {
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
 
 @main
 struct SeraiahGameApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var x = X()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMenuView()
+                .environmentObject(x)
         }
-        .modelContainer(sharedModelContainer)
     }
 }
