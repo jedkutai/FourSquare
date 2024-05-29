@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Checks {
+    static func isValidName(_ name: String) -> Bool {
+        // add logic
+        return false
+    }
+}

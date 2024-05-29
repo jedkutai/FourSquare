@@ -55,10 +55,29 @@ struct MainMenuView: View {
                     }
                     
                     NavigationLink {
-                        TestLeaderboardView()
+                        ProfileView()
                     } label: {
-                        Text("Leaderboards")
+                        HStack {
+                            if x.name.isEmpty {
+                                Text("*")
+                                    .foregroundStyle(Color(.clear))
+                            }
+                            
+                            Text("Options")
+                            
+                            if x.name.isEmpty {
+                                Text("*")
+                                    .foregroundStyle(Color(.systemBlue))
+                            }
+                        }
                     }
+                    
+                    NavigationLink {
+                        LeaderBoardView()
+                    } label: {
+                        Text("Leaderboard")
+                    }
+                    
                 }
                 .font(.title.weight(.semibold))
                 .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
@@ -67,24 +86,24 @@ struct MainMenuView: View {
                 Spacer()
                 Spacer()
                 
-                Button {
-                    showStatSheet.toggle()
-                } label: {
-                    Image(systemName: "chart.bar.xaxis")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: Defaults.iconDimension)
-                        .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                        .padding(.bottom)
-                }
+//                Button {
+//                    showStatSheet.toggle()
+//                } label: {
+//                    Image(systemName: "chart.bar.xaxis")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(height: Defaults.iconDimension)
+//                        .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
+//                        .padding(.bottom)
+//                }
             }
         }
-        .sheet(isPresented: $showStatSheet) {
-            StatSheetView()
-        }
+//        .sheet(isPresented: $showStatSheet) {
+//            StatSheetView()
+//        }
     }
 }
 
-#Preview {
-    MainMenuView()
-}
+//#Preview {
+//    MainMenuView()
+//}

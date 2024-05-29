@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
+
+struct Report: Identifiable, Hashable, Codable {
+    let id: String
+    let name: String
+    var timestamp: Timestamp = Timestamp()
+    
+}

@@ -13,6 +13,8 @@
 		A71C8EE72BC7088B00451D9A /* StatSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71C8EE62BC7088B00451D9A /* StatSheetView.swift */; };
 		A76F09F22BC83E8100F6BF26 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76F09F12BC83E8100F6BF26 /* Ticker.swift */; };
 		A77FDC582BC74547002864EC /* GameTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FDC572BC74547002864EC /* GameTarget.swift */; };
+		A7927AA32BCE461D002E4F09 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7927AA22BCE461D002E4F09 /* LeaderBoardView.swift */; };
+		A7927AA72BCE4EAE002E4F09 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7927AA62BCE4EAE002E4F09 /* Score.swift */; };
 		A79EF3A72BC16DB5007B2E2D /* SeraiahGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EF3A62BC16DB5007B2E2D /* SeraiahGameApp.swift */; };
 		A79EF3AD2BC16DB6007B2E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79EF3AC2BC16DB6007B2E2D /* Assets.xcassets */; };
 		A79EF3B02BC16DB6007B2E2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79EF3AF2BC16DB6007B2E2D /* Preview Assets.xcassets */; };
@@ -51,8 +53,13 @@
 		A79EF4052BC46B25007B2E2D /* CountdownScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EF4042BC46B25007B2E2D /* CountdownScreenView.swift */; };
 		A79EF4072BC4791E007B2E2D /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EF4062BC4791D007B2E2D /* PlayingView.swift */; };
 		A79EF40F2BC5BCFF007B2E2D /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EF40E2BC5BCFF007B2E2D /* GameOverView.swift */; };
-		A7A9068F2BCCE8A3004DCE72 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A9068E2BCCE8A3004DCE72 /* AuthService.swift */; };
-		A7A906922BCCEAE2004DCE72 /* TestLeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A906912BCCEAE2004DCE72 /* TestLeaderboardView.swift */; };
+		A7D429382BCFA06300FFD33A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D429372BCFA06300FFD33A /* ProfileView.swift */; };
+		A7E35D0D2BCFAF3F00A62F54 /* LeaderboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D0C2BCFAF3F00A62F54 /* LeaderboardService.swift */; };
+		A7E35D0F2BD14E1F00A62F54 /* Checks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D0E2BD14E1F00A62F54 /* Checks.swift */; };
+		A7E35D112BD15C1700A62F54 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D102BD15C1700A62F54 /* FetchService.swift */; };
+		A7E35D152BD15C3600A62F54 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D142BD15C3600A62F54 /* ReportService.swift */; };
+		A7E35D172BD1643D00A62F54 /* LeaderboardScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D162BD1643D00A62F54 /* LeaderboardScore.swift */; };
+		A7E35D192BD16D8D00A62F54 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E35D182BD16D8D00A62F54 /* Report.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,8 @@
 		A71C8EE82BC71C1200451D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A76F09F12BC83E8100F6BF26 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		A77FDC572BC74547002864EC /* GameTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTarget.swift; sourceTree = "<group>"; };
+		A7927AA22BCE461D002E4F09 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
+		A7927AA62BCE4EAE002E4F09 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A79EF3A32BC16DB5007B2E2D /* SeraiahGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeraiahGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79EF3A62BC16DB5007B2E2D /* SeraiahGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeraiahGameApp.swift; sourceTree = "<group>"; };
 		A79EF3AC2BC16DB6007B2E2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,8 +84,14 @@
 		A79EF4042BC46B25007B2E2D /* CountdownScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownScreenView.swift; sourceTree = "<group>"; };
 		A79EF4062BC4791D007B2E2D /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		A79EF40E2BC5BCFF007B2E2D /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
-		A7A9068E2BCCE8A3004DCE72 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		A7A906912BCCEAE2004DCE72 /* TestLeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLeaderboardView.swift; sourceTree = "<group>"; };
+		A7D429342BCF88A800FFD33A /* SeraiahGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeraiahGame.entitlements; sourceTree = "<group>"; };
+		A7D429372BCFA06300FFD33A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A7E35D0C2BCFAF3F00A62F54 /* LeaderboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardService.swift; sourceTree = "<group>"; };
+		A7E35D0E2BD14E1F00A62F54 /* Checks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checks.swift; sourceTree = "<group>"; };
+		A7E35D102BD15C1700A62F54 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
+		A7E35D142BD15C3600A62F54 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		A7E35D162BD1643D00A62F54 /* LeaderboardScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardScore.swift; sourceTree = "<group>"; };
+		A7E35D182BD16D8D00A62F54 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +153,7 @@
 			children = (
 				A70F734C2BCA16690042C876 /* Defaults.swift */,
 				A70F734A2BCA074B0042C876 /* QuickTips.swift */,
+				A7E35D0E2BD14E1F00A62F54 /* Checks.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 		A79EF3A52BC16DB5007B2E2D /* SeraiahGame */ = {
 			isa = PBXGroup;
 			children = (
+				A7D429342BCF88A800FFD33A /* SeraiahGame.entitlements */,
 				A71C8EE82BC71C1200451D9A /* Info.plist */,
 				A79EF3B62BC16E6B007B2E2D /* GoogleService-Info.plist */,
 				A79EF3BA2BC16ECC007B2E2D /* Background */,
@@ -211,6 +228,7 @@
 				A79EF4022BC46731007B2E2D /* Target.swift */,
 				A77FDC572BC74547002864EC /* GameTarget.swift */,
 				A76F09F12BC83E8100F6BF26 /* Ticker.swift */,
+				A7E35D162BD1643D00A62F54 /* LeaderboardScore.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +236,8 @@
 		A79EF3BE2BC16F3C007B2E2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7927AA62BCE4EAE002E4F09 /* Score.swift */,
+				A7E35D182BD16D8D00A62F54 /* Report.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,7 +271,9 @@
 		A7A9068D2BCCE89A004DCE72 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A7A9068E2BCCE8A3004DCE72 /* AuthService.swift */,
+				A7E35D0C2BCFAF3F00A62F54 /* LeaderboardService.swift */,
+				A7E35D102BD15C1700A62F54 /* FetchService.swift */,
+				A7E35D142BD15C3600A62F54 /* ReportService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -259,7 +281,8 @@
 		A7A906902BCCEAD1004DCE72 /* LeaderboardViews */ = {
 			isa = PBXGroup;
 			children = (
-				A7A906912BCCEAE2004DCE72 /* TestLeaderboardView.swift */,
+				A7927AA22BCE461D002E4F09 /* LeaderBoardView.swift */,
+				A7D429372BCFA06300FFD33A /* ProfileView.swift */,
 			);
 			path = LeaderboardViews;
 			sourceTree = "<group>";
@@ -367,21 +390,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E35D172BD1643D00A62F54 /* LeaderboardScore.swift in Sources */,
+				A7927AA32BCE461D002E4F09 /* LeaderBoardView.swift in Sources */,
 				A77FDC582BC74547002864EC /* GameTarget.swift in Sources */,
 				A70F734D2BCA16690042C876 /* Defaults.swift in Sources */,
 				A76F09F22BC83E8100F6BF26 /* Ticker.swift in Sources */,
+				A7E35D112BD15C1700A62F54 /* FetchService.swift in Sources */,
+				A7E35D152BD15C3600A62F54 /* ReportService.swift in Sources */,
 				A79EF4032BC46731007B2E2D /* Target.swift in Sources */,
-				A7A906922BCCEAE2004DCE72 /* TestLeaderboardView.swift in Sources */,
 				A79EF3FD2BC1D0F6007B2E2D /* MainMenuView.swift in Sources */,
+				A7E35D192BD16D8D00A62F54 /* Report.swift in Sources */,
+				A7E35D0F2BD14E1F00A62F54 /* Checks.swift in Sources */,
 				A79EF3BD2BC16EE4007B2E2D /* X.swift in Sources */,
 				A71C8EE72BC7088B00451D9A /* StatSheetView.swift in Sources */,
 				A79EF4072BC4791E007B2E2D /* PlayingView.swift in Sources */,
+				A7E35D0D2BCFAF3F00A62F54 /* LeaderboardService.swift in Sources */,
 				A79EF4052BC46B25007B2E2D /* CountdownScreenView.swift in Sources */,
+				A7D429382BCFA06300FFD33A /* ProfileView.swift in Sources */,
 				A79EF3A72BC16DB5007B2E2D /* SeraiahGameApp.swift in Sources */,
 				A71C8EE42BC6FCFC00451D9A /* HowToPlayView.swift in Sources */,
 				A79EF40F2BC5BCFF007B2E2D /* GameOverView.swift in Sources */,
-				A7A9068F2BCCE8A3004DCE72 /* AuthService.swift in Sources */,
 				A79EF4012BC46673007B2E2D /* GameView.swift in Sources */,
+				A7927AA72BCE4EAE002E4F09 /* Score.swift in Sources */,
 				A70F734B2BCA074B0042C876 /* QuickTips.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeraiahGame/SeraiahGame.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SeraiahGame/Preview Content\"";
@@ -532,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = org.elobook.SeraiahGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -541,7 +572,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -550,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeraiahGame/SeraiahGame.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SeraiahGame/Preview Content\"";
@@ -569,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = org.elobook.SeraiahGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -578,7 +610,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

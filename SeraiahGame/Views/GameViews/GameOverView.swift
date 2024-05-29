@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum UploadScoreState {
+    case idle
+    case uploading
+    case success
+    case failed
+}
+
 struct GameOverView: View {
     @Binding var gameState: GameState
     @Binding var score: Int
@@ -26,16 +33,13 @@ struct GameOverView: View {
     
     @Binding var gameOverType: GameOverType
     
+    @State private var uploadScoreState: UploadScoreState = .idle
+    
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var x: X
     var body: some View {
         finalScore
-//        if score > x.highScore {
-//            highScore
-//        } else {
-//            regularScore
-//        }
     }
     
     var finalScore: some View {
@@ -76,6 +80,33 @@ struct GameOverView: View {
                 
                 Spacer()
                 
+                Group {
+                    switch uploadScoreState {
+                    case .idle:
+                        Button {
+                            uploadScore()
+                        } label: {
+                            Text("Upload Score")
+                                .foregroundStyle(Color(.systemBlue))
+                        }
+                    case .uploading:
+                        ProgressView("Uploading Score")
+                    case .success:
+                        Text("Score Uploaded")
+                            .foregroundStyle(Color(.systemGray))
+                    case .failed:
+                        Button {
+                            uploadScore()
+                        } label: {
+                            Text("Failed to upload. Try again.")
+                                .foregroundStyle(Color(.systemBlue))
+                        }
+                    }
+                }
+                .font(.subheadline)
+                
+                Spacer()
+                
                 HStack {
                     Button {
                         x.setHighScore(score: score)
@@ -103,111 +134,9 @@ struct GameOverView: View {
                 
             }
             .padding()
-        }
-    }
-    
-    var highScore: some View {
-        NavigationStack {
-            VStack {
-                Spacer()
-                
-                Text("New High Score!")
-                    .font(.system(size: 150))
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                
-                Text("\(score)")
-                    .font(.system(size: 150))
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    .padding(.horizontal)
-                
-                Spacer()
-                
-                fastestTime
-                
-                Spacer()
-                
-                HStack {
-                    Button {
-                        x.setHighScore(score: score)
-                        dismiss()
-                    } label: {
-                        Image(systemName: "house.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: Defaults.iconDimension)
-                            .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    }
-                    Divider()
-                    Button {
-                        x.setHighScore(score: score)
-                        restartGame()
-                    } label: {
-                        Image(systemName: "arrow.circlepath")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: Defaults.iconDimension)
-                            .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    }
-                }
-                .frame(height: 25)
+            .onAppear {
+                onAppearActions()
             }
-            .padding()
-        }
-    }
-    
-    var regularScore: some View {
-        NavigationStack {
-            VStack {
-                Spacer()
-                
-                Text("Final Score")
-                    .font(.system(size: 150))
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                
-                Text("\(score)")
-                    .font(.system(size: 150))
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(1)
-                    .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    .padding(.horizontal)
-                
-                Spacer()
-                
-                fastestTime
-                
-                Spacer()
-                
-                HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "house.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: Defaults.iconDimension)
-                            .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    }
-                    Divider()
-                    Button {
-                        restartGame()
-                    } label: {
-                        Image(systemName: "arrow.circlepath")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: Defaults.iconDimension)
-                            .foregroundStyle(colorScheme == .dark ? Color(.white) : Color(.black))
-                    }
-                }
-                .frame(height: 25)
-                
-            }
-            .padding()
         }
     }
     
@@ -285,6 +214,26 @@ struct GameOverView: View {
         }
         
         return fastestTime
+    }
+    
+    private func onAppearActions() {
+        if !x.name.isEmpty {
+            if x.scoreUploadsAutomatically {
+                uploadScore()
+            }
+        }
+    }
+    
+    private func uploadScore() {
+        uploadScoreState = .uploading
+        Task {
+            do {
+                try await LeaderboardService.uploadScore(score: score, name: x.name)
+                uploadScoreState = .success
+            } catch {
+                uploadScoreState = .failed
+            }
+        }
     }
     
     
